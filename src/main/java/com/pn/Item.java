@@ -2,22 +2,22 @@ package com.pn;
 
 public class Item {
 
-    private String item_Id;
+    private String items_Id;
     private String name;
     private String price;
 
     public Item() {
-        this.item_Id = item_Id;
+        this.items_Id = items_Id;
         this.name = name;
         this.price = price;
     }
 
     public String getItem_Id() {
-        return item_Id;
+        return items_Id;
     }
 
     public void setItem_Id(String item_Id) {
-        this.item_Id = item_Id;
+        this.items_Id = item_Id;
     }
 
     public String getName() {
@@ -28,7 +28,7 @@ public class Item {
         this.name = name;
     }
 
-    public String getPrice() {
+    public float getPrice() {
         return price;
     }
 
@@ -39,7 +39,7 @@ public class Item {
     @Override
     public String toString() {
         return "Item{" +
-                "item_Id='" + item_Id + '\'' +
+                "item_Id='" + items_Id + '\'' +
                 ", name='" + name + '\'' +
                 ", price='" + price + '\'' +
                 '}';

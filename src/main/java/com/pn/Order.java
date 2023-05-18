@@ -1,37 +1,60 @@
 package com.pn;
 
+import java.util.ArrayList;
+
 public class Order {
 
-    private String orderId;
-    private String item;
+    private int id;
+    private ArrayList<Item> items;
 
+
+    public Order(int id) {
+        this.id = id;
+        this.items = new ArrayList<Item>();
+    }
 
     public Order() {
-        this.orderId = orderId;
-        this.item = item;
+
     }
 
-    public String getOrderId() {
-        return orderId;
+    public int getId() {
+        return this.id;
     }
 
-    public void setOrder_Id(String orderId) {
-        this.orderId = orderId;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getItems() {
-        return item;
+    public void setItems(ArrayList<Item> items) {
+        this.items = items;
     }
 
-    public void setItems(String item) {
-        this.item = item;
+    public ArrayList<Item> getItems() {
+        return items;
     }
+
+    public void addItem(Item item) {
+        this.items.add(item);
+    }
+
+
+    public float calculateTotal() {
+        float total = 0;
+        for (int i = 0; i < this.items.size(); i++) ;
+        Item currentItem = this.items.get(i);
+        total += currentItem.getPrice();
+
+        return total;
+    }
+
+
+
+
 
     @Override
     public String toString() {
-        return "Order{" +
-                "order_Id='" + orderId + '\'' +
-                ", item='" + item + '\'' +
-                '}';
+        return "Order\n" +
+                "ID: " + id + "\n" +
+                "Items: " + this.items + "\n";
     }
 }
